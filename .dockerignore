@@ -1,0 +1,8 @@
+dist/
+.git
+.github/
+*.md
+devcontainer-template/
+export-tars.sh
+open-vscode.*
+**/.DS_Store

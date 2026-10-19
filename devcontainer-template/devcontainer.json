@@ -1,0 +1,9 @@
+// .devcontainer/devcontainer.json of the dataflow lab repos (synced from each
+// solution repo): VS Code offers "Reopen in Container" with the course's image.
+// The user (student), the Java extension and its settings, and the shared
+// df-env-vscode-server volume come from the image's devcontainer.metadata
+// label, so nothing else is needed here.
+{
+  "name": "Dataflow lab",
+  "image": "ghcr.io/gtiit-cs-seminar/df-env:latest"
+}

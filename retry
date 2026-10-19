@@ -1,0 +1,8 @@
+#!/bin/sh
+# retry <command...>: runs the command up to 5 times, 10 s apart, until it succeeds.
+for i in 1 2 3 4 5; do
+    "$@" && exit 0
+    echo "retry $i: $*" >&2
+    sleep 10
+done
+exit 1
