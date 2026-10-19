@@ -51,12 +51,14 @@ One tar per architecture: `amd64` for Windows, Linux and Intel Macs; `arm64` for
 with `docker load -i <file>`; the image gets the name the devcontainer uses, so VS Code doesn't try to pull
 it. On an Apple Silicon Mac the `amd64` build is emulated (QEMU) and takes several minutes.
 
-## Devcontainer in the student repos
+## Devcontainer
 
-Each solution repo has [`devcontainer-template/devcontainer.json`](devcontainer-template/devcontainer.json)
-as `.devcontainer/devcontainer.json`, synced to the skeleton, so students who open their fork in VS Code get
-**"Reopen in Container"**. It only names the image; the user, extension, settings and volume come from the
-image's `devcontainer.metadata` label.
+The student repos don't include a devcontainer: the lab runs with just a JDK, and the image is only a
+fallback. [STUDENTS.md](STUDENTS.md) tells a student who needs it to add
+[`devcontainer-template/devcontainer.json`](devcontainer-template/devcontainer.json) as
+`.devcontainer/devcontainer.json` in their fork. It only names the image; the user, extension, settings and
+volume come from the image's `devcontainer.metadata` label. For a submission, `open-vscode.sh` (below) needs
+no devcontainer at all.
 
 ## Open any folder in VS Code, inside the container
 

@@ -30,9 +30,17 @@ Load it once, with Docker running:
 1. Clone your fork. **On Windows**, it's best to clone it *inside WSL* (in an Ubuntu terminal:
    `cd ~ && git clone ...`) and open it with `code .` from there; cloning under `C:\...` also works, but is
    much slower.
-2. Open the folder in VS Code. You'll get a **"Reopen in Container"** prompt (or `F1` → **Dev Containers:
+2. Tell VS Code to use the image: in your repo folder, create the file `.devcontainer/devcontainer.json`
+   with this content (or download [this one](devcontainer-template/devcontainer.json) there):
+
+   ```json
+   { "name": "Dataflow lab", "image": "ghcr.io/gtiit-cs-seminar/df-env:latest" }
+   ```
+
+   You may commit it to your fork; it doesn't change anything for whoever doesn't use Docker.
+3. Open the folder in VS Code. You'll get a **"Reopen in Container"** prompt (or `F1` → **Dev Containers:
    Reopen in Container**).
-3. The first time, it downloads the image and VS Code installs its server and the Java extension inside the
+4. The first time, it downloads the image and VS Code installs its server and the Java extension inside the
    container (around 1 GB in total): it may sit on "Installing server" for several minutes. This happens
    only once; after that it opens in seconds. If Java support doesn't show up when it finishes, run `F1` →
    **Developer: Reload Window**.

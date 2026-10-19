@@ -8,6 +8,8 @@ name: Publish Docker image
 on:
   push:
     branches: [main]
+    # Docs and helper scripts aren't part of the image.
+    paths-ignore: ['**.md', 'devcontainer-template/**', 'open-vscode.*', 'export-tars.sh']
   workflow_dispatch:
 
 permissions:
